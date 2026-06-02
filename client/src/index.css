@@ -1,0 +1,1087 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+  margin : 0;
+  padding : 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+}
+
+.nav{
+  width: 100%;
+  height: 80px;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.Header{
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.Links{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.Links a,
+.Logout{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.Links a:hover,
+.Logout:hover{
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.RegisterForm,
+.LoginForm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.RegisterForm h1,
+.LoginForm h1{
+    color: white;
+    margin-bottom: 25px;
+    font-size: 2.3rem;
+}
+
+/* FIX: Changed width to max-width so it can shrink on small screens */
+.Form{
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    animation: fadeIn 0.6s ease;
+}
+
+.Form input{
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.Form input:focus{
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+.Form button{
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #4ade80;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.Form button:hover{
+    background: #22c55e;
+    transform: translateY(-2px);
+}
+
+.Form button:active{
+    transform: scale(0.98);
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.HomeItems{
+    width: 90%;
+    max-width: 1400px;
+    margin: 40px auto;
+}
+
+.HomeItems h1{
+    text-align: center;
+    color: white;
+    margin-bottom: 35px;
+    font-size: 2.5rem;
+}
+
+/* FIX: Adjusted minmax slightly to fit standard mobile viewports gracefully */
+.items-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* FIX: Changed width from 300px to 100% so CSS grid handles the layout sizing */
+.item-card{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 25px;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    min-height: 390px;
+}
+
+.item-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.item-card h3{
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.description{
+    margin-bottom: 15px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.category{
+    display: inline-block;
+    background: rgba(74, 222, 128, 0.25);
+    color: #d1fae5;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.item-card p{
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.item-card strong{
+    color: #ffffff;
+}
+
+.Dashboard{
+    width: 90%;
+    max-width: 1400px;
+    margin: 40px auto;
+}
+
+.Dashboard h1{
+    text-align: center;
+    color: white;
+    margin-bottom: 35px;
+    font-size: 2.5rem;
+}
+
+.dashboard-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* FIX: Changed width to 100% so it fits comfortably within the grid system */
+.dashboard-card{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 25px;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.dashboard-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.dashboard-card h3{
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.dashboard-card .description{
+    line-height: 1.6;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.action-buttons{
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.edit-btn,
+.delete-btn{
+    flex: 1;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.edit-btn{
+    background: #3b82f6;
+    color: white;
+}
+
+.edit-btn:hover{
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.delete-btn{
+    background: #ef4444;
+    color: white;
+}
+
+.delete-btn:hover{
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+.CreateItemPage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.CreateItemPage h1{
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+/* FIX: Changed width to max-width */
+.CreateItemForm{
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    animation: fadeIn 0.6s ease;
+}
+
+.CreateItemForm input,
+.CreateItemForm textarea,
+.CreateItemForm select{
+    width: 100%;
+    padding: 14px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.CreateItemForm input:focus,
+.CreateItemForm textarea:focus,
+.CreateItemForm select:focus{
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.CreateItemForm textarea{
+    min-height: 120px;
+    resize: vertical;
+}
+
+.CreateItemForm button{
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    background: #4ade80;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.CreateItemForm button:hover{
+    background: #22c55e;
+    transform: translateY(-2px);
+}
+
+.CreateItemForm button:active{
+    transform: scale(0.98);
+}
+
+.EditItemPage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.EditItemPage h1{
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+/* FIX: Changed width to max-width */
+.EditItemForm{
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    animation: fadeIn 0.6s ease;
+}
+
+.EditItemForm input,
+.EditItemForm textarea,
+.EditItemForm select{
+    width: 100%;
+    padding: 14px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.EditItemForm textarea{
+    min-height: 120px;
+    resize: vertical;
+}
+
+.EditItemForm input:focus,
+.EditItemForm textarea:focus,
+.EditItemForm select:focus{
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.update-btn{
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    background: #3b82f6;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.update-btn:hover{
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.update-btn:active{
+    transform: scale(0.98);
+}
+
+.loader-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:70vh;
+}
+
+.loader{
+    width:50px;
+    height:50px;
+    border:5px solid #ddd;
+    border-top:5px solid #7725eb;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+.ntgDashboard,
+.ntgHome{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.search-wrapper{
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    padding: 15px 20px;
+    border-radius: 20px;
+}
+
+.search-wrapper input{
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.search-wrapper input::placeholder{
+    color:white;
+}
+
+.search-icon{
+    color: white;
+}
+
+.item-details{
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.item-image-container{
+    width: 100%;
+}
+
+.item-image{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.item-content{
+    color: white;
+}
+
+.item-category{
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.15);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.item-content h1{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.item-description{
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.item-info{
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+}
+
+.item-info h3{
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.item-info p{
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   1. HOME CARD METADATA STYLING
+   ========================================== */
+.card-meta {
+    margin-top: auto; /* Aligns metadata cleanly right above the buttons */
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card-meta p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-meta p span {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* ==========================================
+   2. DASHBOARD STATS & PROFILE LINK STYLING
+   ========================================== */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 20px 0 30px 0;
+    width: 100%;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.stat-card h2 {
+    font-size: 2.2rem;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-card p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+/* Profile Redirection Button Link Style */
+.Profile-link {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+}
+
+.Profile-link:hover {
+    background: #ffffff;
+    color: #764ba2; /* Swaps background and matches text theme */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   3. PROFILE PAGE GLASSMOPHISM FRAME
+   ========================================== */
+.ProfilePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+    padding: 20px;
+}
+
+.profile-container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.profile-container h1 {
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.profile-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+    margin: 20px 0;
+}
+
+.profile-container h3 {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.profile-details p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.profile-details p strong {
+    color: #ffffff;
+    margin-right: 8px;
+}
+
+/* ==========================================
+   1. HOME CARD METADATA STYLING
+   ========================================== */
+.card-meta {
+    margin-top: auto; /* Aligns metadata cleanly right above the buttons */
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card-meta p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-meta p span {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* ==========================================
+   2. DASHBOARD STATS & PROFILE LINK STYLING
+   ========================================== */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 20px 0 30px 0;
+    width: 100%;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.stat-card h2 {
+    font-size: 2.2rem;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-card p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+/* Profile Redirection Button Link Style */
+.Profile-link {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+}
+
+.Profile-link:hover {
+    background: #ffffff;
+    color: #764ba2; /* Swaps background and matches text theme */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   3. PROFILE PAGE GLASSMOPHISM FRAME
+   ========================================== */
+.ProfilePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+    padding: 20px;
+}
+
+.profile-container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.profile-container h1 {
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.profile-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+    margin: 20px 0;
+}
+
+.profile-container h3 {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.profile-details p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.profile-details p strong {
+    color: #ffffff;
+    margin-right: 8px;
+}
+
+
+/* ===================================================
+   COMPREHENSIVE MOBILE OPTIMIZATIONS (Media Queries)
+   =================================================== */
+
+@media(max-width: 768px) {
+    
+    /* 1. Navbar Mobile Layout Transformation */
+    .nav {
+        height: 60px;        /* Forces a strict, low height */
+        padding: 0 4%;       /* Tighter side margins */
+        display: flex;
+        flex-direction: row; /* Keeps everything on ONE single line */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .Header {
+        font-size: 1.8rem;
+    }
+
+    .Links {
+        display: flex;
+        flex-direction: row; /* Horizontal alignment */
+        gap: 4px;            /* Minimum spacing between buttons */
+    }
+
+    .Links a, .Logout {
+        padding: 6px 10px;   /* Small padding just big enough to tap */
+        font-size: 0.8rem;   /* Small, neat text */
+        border-radius: 6px; /* Slightly sharper corners to match size */
+    }
+
+    /* 2. FORCE 2 CARDS PER ROW ON MOBILE */
+    .items-container, 
+    .dashboard-container {
+        grid-template-columns: repeat(2, 1fr) !important; /* Forces exactly 2 equal columns */
+        gap: 10px !important; 
+        width: 100%;                            /* Tighter gaps so cards have more room */
+    }
+
+    /* CRITICAL FIX: Kill the desktop 300px width and 390px height */
+    .item-card, 
+    .dashboard-card {
+        width: 100% !important;       /* Forces card to match its 50% grid column width */
+        height: auto !important;      /* Removes the rigid 390px deskop height restriction */
+        min-height: unset !important; /* Resets any leftover minimums */
+        padding: 12px !important;     /* Tighter padding inside the cards */
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Pushes content and buttons neatly apart */
+    }
+
+    .item-card h3, 
+    .dashboard-card h3 {
+        font-size: 1rem;      /* Smaller headings so they don't break lines awkwardly */
+        margin-bottom: 8px;
+    }
+
+    /* ... keep your previous nav and card grid fixes here ... */
+
+    /* FIX: Prevents images from spilling out of the cards */
+    .item-card img, 
+    .dashboard-card img {
+        width: 100%;
+        height: 120px;       /* Set a fixed height for mobile thumbnails */
+        object-fit: cover;   /* Crops the image perfectly without stretching it */
+        border-radius: 12px; /* Smooth corners to match the card theme */
+        margin-bottom: 10px; /* Spacing between the image and the text below */
+    }
+
+    /* Adjust cards layout so content flows nicely with the image */
+    .item-card, 
+    .dashboard-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Keeps buttons cleanly pushed to the bottom */
+        padding: 12px;        
+        min-height: auto;     
+    }
+
+
+    .description, 
+    .dashboard-card .description {
+        font-size: 0.8rem;    /* Smaller text body */
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .category {
+        padding: 4px 8px;     /* Smaller tag wrapper */
+        font-size: 0.7rem;
+        margin-bottom: 10px;
+    }
+
+    .action-buttons {
+        flex-direction: column; /* Keeps buttons stacked within the skinnier cards */
+        gap: 6px;
+        margin-top: 10px;
+    }
+
+    .edit-btn, .delete-btn {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    /* 2. Form Layout Fixes */
+    .RegisterForm, .LoginForm, .CreateItemPage, .EditItemPage {
+        margin-top: 30px;
+        padding: 0 5%;
+    }
+
+    .RegisterForm h1, .LoginForm h1, 
+    .CreateItemPage h1, .EditItemPage h1,
+    .HomeItems h1, .Dashboard h1 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    .Form, .CreateItemForm, .EditItemForm {
+        padding: 25px 20px;
+    }
+
+    /* ... keep your previous nav and 2-column card layout styles here ... */
+
+    /* Force the stats to layout inside a 2x2 grid on phones */
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        margin: 15px 0 20px 0;
+    }
+
+    .stat-card {
+        padding: 15px 10px !important;
+    }
+
+    .stat-card h2 {
+        font-size: 1.6rem !important;
+    }
+
+    .stat-card p {
+        font-size: 0.75rem !important;
+    }
+
+    .Profile-link {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 12px !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* Tighter text scale for item card meta details on mobile */
+    .card-meta p {
+        font-size: 0.7rem !important;
+    }
+
+    /* Scales down profile card viewport bounding sizes */
+    .profile-container {
+        padding: 25px 20px !important;
+        margin-top: 20px;
+    }
+
+    .profile-container h1 {
+        color: white;
+        font-size: 1.6rem !important;
+    }
+
+    .profile-details p {
+        font-size: 0.9rem !important;
+        padding: 8px 12px !important;
+    }
+
+}
+
+@media (max-width: 900px) {
+    .item-details {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin: 20px auto;
+    }
+
+    .item-image {
+        height: 300px;
+    }
+
+    .item-content h1 {
+        font-size: 2rem;
+    }
+}
