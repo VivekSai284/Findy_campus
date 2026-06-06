@@ -126,7 +126,7 @@ router.get(
         );
 
         res.redirect(
-            `https://findy-campus-backend.onrender.com/google-success?token=${token}`
+            `https://findy-campus-frontend.onrender.com/google-success?token=${token}`
         );
 
     }
