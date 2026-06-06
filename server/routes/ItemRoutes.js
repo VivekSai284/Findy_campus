@@ -6,13 +6,15 @@ const upload = require("../middleware/uploadMiddleware");
 
 router.post("/", authMiddleware, upload.single("image"), async (req, res) => {
   try {
+
+     console.log("FILE:", req.file);
     const newItem = await new Item({
       title: req.body.title,
       description: req.body.description,
       category: req.body.category,
       location: req.body.location,
       contact: req.body.contact,
-      image: req.file ? req.file.filename : "",
+      image: req.file ? req.file.path : "",
       user: req.user.id,
     });
     await newItem.save();

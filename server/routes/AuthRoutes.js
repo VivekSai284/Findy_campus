@@ -1,5 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
+const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
 const User = require('../models/User');
@@ -81,6 +82,55 @@ router.post('/login', async (req, res) => {
        
     }
 });
+
+
+router.get(
+    '/google',
+
+    passport.authenticate(
+        'google',
+        {
+            scope: [
+                'profile',
+                'email'
+            ]
+        }
+    )
+);
+
+
+
+router.get(
+    '/google/callback',
+
+    passport.authenticate(
+        'google',
+        {
+            session: false
+        }
+    ),
+
+    async (req, res) => {
+
+        const token = jwt.sign(
+
+            {
+                id: req.user._id
+            },
+
+            process.env.JWT_SECRET,
+
+            {
+                expiresIn: '7d'
+            }
+        );
+
+        res.redirect(
+            `http://localhost:3000/google-success?token=${token}`
+        );
+
+    }
+);
 
 router.get('/profile', authMiddleware, async (req, res) => {
     res.status(201).json({

@@ -13,7 +13,7 @@ const Dashboard = () => {
   const fetchItems = async () => {
     try {
       setloading(true);
-      const res = await axios.get("http://localhost:5000/items/my-items", {
+      const res = await axios.get("https://findy-campus-backend.onrender.com/items/my-items", {
         headers: {
           Authorization: `${token}`,
         },
@@ -32,7 +32,7 @@ const Dashboard = () => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:5000/items/${id}`, {
+      const res = await axios.delete(`https://findy-campus-backend.onrender.com/items/${id}`, {
         headers: {
           Authorization: `${token}`,
         },

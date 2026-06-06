@@ -14,7 +14,7 @@ const ItemDetails = () => {
 
   const fetchItem = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/items/${id}`);
+      const response = await axios.get(`https://findy-campus-backend.onrender.com/items/${id}`);
 
       console.log(response.data);
 
@@ -37,7 +37,7 @@ const ItemDetails = () => {
 
   <div className="item-image-container">
     <img
-      src={`http://localhost:5000/uploads/${item.image}`}
+      src={item.image}
       alt={item.title}
       className="item-image"
     />

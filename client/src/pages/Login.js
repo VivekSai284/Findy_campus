@@ -4,8 +4,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const Login = () => {
+const Login = ({ isLoggedIn, setIsLoggedIn }) => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const [loginData, setLoginData] = useState({
     email: "",
@@ -14,21 +15,24 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const resp = await axios.post(
-        "http://localhost:5000/auth/login",
+        "https://findy-campus-backend.onrender.com/auth/login",
         loginData,
       );
 
       localStorage.setItem("token", resp.data.token);
+      setIsLoggedIn(true);
 
       toast.success("Login Successful");
-
       navigate("/");
       window.location.reload();
     } catch (error) {
       toast.error(error.response?.data?.message || "Login Failed");
+    }finally {
+      setLoading(false);
     }
 
     setLoginData({
@@ -67,7 +71,9 @@ const Login = () => {
           }}
         />
 
-        <button type="submit">Login</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Logging in..." : "Login"}
+        </button>
       </form>
     </div>
   );

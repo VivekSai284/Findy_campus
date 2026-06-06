@@ -14,7 +14,7 @@ const Home = () => {
     const fetchItems = async () => {
       try {
         setloading(true);
-        const res = await axios.get("http://localhost:5000/items");
+        const res = await axios.get("https://findy-campus-backend.onrender.com/items");
         setItems(res.data);
       } catch (error) {
         console.log(error.response.data);
@@ -69,7 +69,7 @@ const Home = () => {
           >
             {item.image && (
               <img
-                src={`http://localhost:5000/uploads/${item.image}`}
+                src={item.image}
                 alt={item.title}
                 width="200"
               />

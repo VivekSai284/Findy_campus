@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 
 const CreateItem = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const token = localStorage.getItem("token");
   console.log(token);
@@ -21,6 +22,7 @@ const CreateItem = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const formData = new FormData();
@@ -35,7 +37,7 @@ const CreateItem = () => {
         formData.append("image", image);
       }
 
-      const resp = await axios.post("http://localhost:5000/items", formData, {
+      const resp = await axios.post("https://findy-campus-backend.onrender.com/items", formData, {
         headers: {
           Authorization: `${token}`,
         },
@@ -47,6 +49,8 @@ const CreateItem = () => {
     } catch (error) {
       console.log(error.response.data);
       toast.error("Failed to create Item");
+    }finally{
+      setLoading(false);
     }
   };
 
@@ -126,7 +130,9 @@ const CreateItem = () => {
         />
 
 
-        <button type="submit">Create Item</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Creating..." : "Create Item"}
+        </button>
       </form>
     </div>
   );

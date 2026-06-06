@@ -20,7 +20,7 @@ const Profile = () => {
                 console.log('TOKEN:', token);
 
             const res = await axios.get(
-                'http://localhost:5000/users/me',
+                'https://findy-campus-backend.onrender.com/users/me',
                 {
                     headers: {
                         Authorization:

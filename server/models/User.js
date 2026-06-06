@@ -15,6 +15,9 @@ const userSchema = mongoose.Schema({
     password : {
         type : String,
         required : true
+    },
+    googleId : {
+        type : String
     }
 },{
     timestamps:true

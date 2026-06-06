@@ -18,7 +18,7 @@ const EditItem = () => {
     
     const fetchItems = async() => {
         try{
-            const res = await axios.get('http://localhost:5000/items')
+            const res = await axios.get('https://findy-campus-backend.onrender.com/items')
 
             const item = res.data.find(
                 item => item._id == id
@@ -45,7 +45,7 @@ const EditItem = () => {
     try{
         const token = localStorage.getItem('token')
 
-        const res = await axios.put(`http://localhost:5000/items/${id}`, itemData, {
+        const res = await axios.put(`https://findy-campus-backend.onrender.com/items/${id}`, itemData, {
             headers: {
                 Authorization : `${token}`
             }
