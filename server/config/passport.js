@@ -9,7 +9,7 @@ passport.use(
             clientID: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
             callbackURL:
-                '/auth/google/callback'
+                'https://findy-campus-backend.onrender.com/auth/google/callback'
         },
 
         async (
