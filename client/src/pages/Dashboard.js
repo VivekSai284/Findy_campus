@@ -77,6 +77,7 @@ const Dashboard = () => {
     <div className="Dashboard">
       <h1>My Posts</h1>
 
+
       <div className="stats-container">
         <div className="stat-card">
           <h2>{totalPosts}</h2>
@@ -98,6 +99,9 @@ const Dashboard = () => {
           <p>Posts This Month</p>
         </div>
       </div>
+      <Link to="/profile" className="Profile-link">
+      Profile
+    </Link>
 
       <div className="dashboard-container">
         {items.map((item) => (
