@@ -91,8 +91,8 @@ const Profile = () => {
             {new Date(user.createdAt).toLocaleDateString()}
           </p>
         </div>
+        <button onClick={deleteAccount}>Delete Account</button>
       </div>
-      <button onClick={deleteAccount}>Delete Account</button>
     </div>
   );
 };
