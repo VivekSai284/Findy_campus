@@ -953,6 +953,7 @@ body{
 }
 
 .profile-container h1 {
+    color: white;
     font-size: 2.2rem;
     margin-top: 0;
     margin-bottom: 15px;
@@ -992,6 +993,41 @@ body{
 .profile-details p strong {
     color: #ffffff;
     margin-right: 8px;
+}
+
+/* ==========================================
+   PROFILE DELETE ACCOUNT BUTTON STYLING
+   ========================================== */
+.delete-account-btn {
+    width: 100%;
+    margin-top: 25px;
+    background: rgba(239, 68, 68, 0.292); /* Translucent crimson backdrop */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    color: #ff7878; /* Soft pastel red text color */
+    padding: 12px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+.delete-account-btn:hover {
+    background: #ef4444; /* Fills button completely on active intent */
+    color: #ffffff;
+    border-color: #ef4444;
+    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+    transform: translateY(-2px);
+}
+
+.delete-account-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
 }
 
 
@@ -1174,6 +1210,20 @@ body{
         font-size: 0.9rem !important;
         padding: 8px 12px !important;
     }
+
+    /* ... keep your previous mobile grid, footer, and nav styles here ... */
+
+    /* Optimizes click targets and scales typography down for smaller screen bounds */
+    .delete-account-btn {
+        padding: 10px 16px !important;
+        font-size: 0.85rem !important;
+        margin-top: 20px;
+    }
+
+    .delete-account-btn:hover {
+        transform: none !important; /* Disables lifting animations on mobile touch devices */
+    }
+
 
 
 
