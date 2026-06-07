@@ -67,16 +67,11 @@ const Dashboard = () => {
     );
   }
   if (items.length === 0) {
-    return 
-    <><Link to="/profile" className="Profile-link">
-      Profile
-    </Link>
-    <h2 className="ntgDashboard">You haven't posted any items yet.</h2></>;
+    return <h2 className="ntgDashboard">You haven't posted any items yet.</h2>;
   }
   return (
     <div className="Dashboard">
       <h1>My Posts</h1>
-
 
       <div className="stats-container">
         <div className="stat-card">
@@ -99,9 +94,10 @@ const Dashboard = () => {
           <p>Posts This Month</p>
         </div>
       </div>
-      <Link to="/profile" className="Profile-link">
-      Profile
-    </Link>
+
+      <Link to="/profile" className = "Profile-link">
+        Profile
+      </Link>
 
       <div className="dashboard-container">
         {items.map((item) => (
