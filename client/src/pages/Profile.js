@@ -33,37 +33,6 @@ const Profile = () => {
     }
   };
 
-  const deleteAccount = async () => {
-    const confirmDelete = window.confirm(
-      "Are you sure? This action cannot be undone.",
-    );
-
-    if (!confirmDelete) {
-      return;
-    }
-
-    try {
-      const token = localStorage.getItem("token");
-
-      const res = await axios.delete(
-        "https://findy-campus-frontend.onrender.com/users/delete-account",
-        {
-          headers: {
-            Authorization: `${token}`,
-          },
-        },
-      );
-
-      toast.success("Account deleted successfully");
-
-      localStorage.removeItem("token");
-
-      navigate("/");
-    } catch (error) {
-      toast.error(error.response.data.message);
-    }
-  };
-
   if (!user) {
     return (
       <div className="loader-container">
@@ -91,9 +60,6 @@ const Profile = () => {
             {new Date(user.createdAt).toLocaleDateString()}
           </p>
         </div>
-        <button className="delete-account-btn" onClick={deleteAccount}>
-          Delete Account
-        </button>
       </div>
     </div>
   );
